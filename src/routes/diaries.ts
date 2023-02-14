@@ -1,13 +1,12 @@
 import express from "express";
-
+import { DiariesController } from "../controllers/diaries/diaries.controller";
 const router = express.Router();
 
-router.get('/', (_req, res) => {
-    res.send("fetching all entry diaries...");
-});
 
-router.post('/', (_req, res) => {
-    res.send('saving all entries');
-});
+const diariesController = new DiariesController();
 
-export default router;
+router.get('/diaries', diariesController.getAll);
+
+router.post('/diaries', diariesController.save);
+
+export const diariesRoutes = router;

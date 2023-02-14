@@ -1,5 +1,5 @@
 import express from "express";
-import diaryRouter from "./routes/diaries";
+import * as routes from "./routes";
 
 const app = express();
 app.use(express.json());
@@ -11,7 +11,8 @@ app.get('/', (_req, res) => {
     res.send("Hellow World")
 });
 
-app.use("/api/diaries", diaryRouter);
+app.use("/api/v1/", routes.diariesRoutes);
+app.use("/api/v1/", routes.historiesRouter);
 
 app.listen(PORT, () => {
     console.log("Listening on port " + PORT);
