@@ -1,0 +1,33 @@
+{
+  "name": "sistema_escolar",
+  "version": "1.0.0",
+  "description": "SistemaEscolar By:Julio2JAM",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julio2JAM/sistemaEscolar.git"
+  },
+  "keywords": [
+    "school-managent-system",
+    "backend",
+    "api"
+  ],
+  "author": "Julio Alvarez <Julio2JAM019@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Julio2JAM/sistemaEscolar/issues"
+  },
+  "homepage": "https://github.com/Julio2JAM/sistemaEscolar#readme",
+  "dependencies": {
+    "config": "^3.3.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "typescript": "^4.9.5"
+  }
+}
