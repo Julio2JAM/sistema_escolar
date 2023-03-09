@@ -10,12 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StudentsController = void 0;
-const database_1 = require("../../database/database");
+const __database_1 = require("../../database/__database");
 class StudentsController {
     constructor() { }
     getAll(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const conn = yield database_1.database.getConnection();
+            const conn = yield __database_1.database.getConnection();
             const query = 'SELECT * FROM students';
             const result = yield conn.query(query).catch((err) => {
                 console.log('err query students', err);

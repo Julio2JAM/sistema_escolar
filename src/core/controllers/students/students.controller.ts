@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { database } from '../../database/database';
+import { database } from '../../database/__database';
 
 export class StudentsController {
 	constructor() {}
