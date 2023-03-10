@@ -1,3 +1,1 @@
-export * from './diaries';
-export * from './histories';
-export * from './students.routes';
+export * from '../models/students/students.routing';

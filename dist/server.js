@@ -14,11 +14,8 @@ const database_1 = require("./core/database/database");
 require("./core/models/index");
 const bootstrap = () => __awaiter(void 0, void 0, void 0, function* () {
     const application = new app_1.Application();
-    yield database_1.database.authenticate().catch((error) => {
-        console.log('Error database authentication', error);
-    });
-    yield database_1.database.sync().catch((error) => {
-        console.log('Error syncing database', error);
+    yield database_1.database.initialize().catch((error) => {
+        console.log('Error initializing database', error);
     });
     application.initApplication();
 });
