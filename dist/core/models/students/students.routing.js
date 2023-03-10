@@ -9,4 +9,7 @@ const students_controller_1 = require("./students.controller");
 const router = express_1.default.Router();
 const controller = new students_controller_1.StudentsController();
 router.get('/students', controller.getAll);
+router.get('/students/:id', controller.getById);
+router.post('/students', controller.create);
+router.put('/students', controller.update);
 exports.studentsRouter = router;

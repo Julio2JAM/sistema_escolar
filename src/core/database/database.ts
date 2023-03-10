@@ -25,6 +25,6 @@ export const database = new DataSource({
 	migrations: [],
 });
 
-export const getRepository = <T extends ObjectLiteral>(repo: EntityTarget<T>): Repository<T> => {
+export const getRepository = <T extends ObjectLiteral> (repo: EntityTarget<T>): Repository<T> => {
 	return database.getRepository(repo);
 };

@@ -4,6 +4,7 @@
 	"description": "SistemaEscolar By:Julio2JAM",
 	"main": "dist/server.js",
 	"scripts": {
+		"build": "tsc",
 		"dev": "concurrently \"tsc --watch\" \"nodemon dist/src/server.js \"",
 		"start": "node build/server.js",
 		"tsc": "tsc",
@@ -33,7 +34,7 @@
 		"reflect-metadata": "^0.1.13",
 		"sequelize": "^6.29.2",
 		"typeorm": "^0.3.12",
-		"zod": "3.20.6"
+		"zod": "^3.14.4"
 	},
 	"devDependencies": {
 		"@types/cors": "^2.8.13",
