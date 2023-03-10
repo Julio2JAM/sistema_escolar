@@ -10,21 +10,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StudentsController = void 0;
-const database_1 = require("../../database/database");
+const students_service_1 = require("./students.service");
 class StudentsController {
     constructor() { }
-    getAll(req, res) {
+    getAll(_, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const conn = yield database_1.database.getConnection();
-            const query = 'SELECT * FROM students';
-            const result = yield conn.query(query).catch((err) => {
-                console.log('err query students', err);
-                return {
+            const service = new students_service_1.StudentsService();
+            const students = yield service.getAll();
+            if (students.length === 0) {
+                return res.status(404).json({
                     message: 'No students found',
                     status: 404,
-                };
-            });
-            res.status(200).json(result);
+                });
+            }
+            return res.status(200).json(students);
         });
     }
 }

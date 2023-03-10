@@ -3,11 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.historiesRouter = void 0;
+exports.studentsRouter = void 0;
 const express_1 = __importDefault(require("express"));
+const students_controller_1 = require("./students.controller");
 const router = express_1.default.Router();
-router.get('/history', (req, res) => {
-    console.log(req);
-    res.send("Get history");
-});
-exports.historiesRouter = router;
+const controller = new students_controller_1.StudentsController();
+router.get('/students', controller.getAll);
+exports.studentsRouter = router;
